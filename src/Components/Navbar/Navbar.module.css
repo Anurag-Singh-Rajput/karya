@@ -5,12 +5,21 @@
   width: 20%;
   padding-left: 2%;
 }
-
-.navbar h1 {
+.navbar__title {
+}
+.navbar__title h1 {
   font-size: 1.2rem;
   margin-top: 10%;
 }
-.navbar div::after {
+.navbar__title_icon {
+  display: flex;
+  position: absolute;
+  margin: 0 auto;
+  right: 50px;
+  color: #fabb18;
+  font-size: 1.5rem;
+}
+.navbar .navbar__title::after {
   content: "";
   position: absolute;
   margin-top: 0.5%;
@@ -27,6 +36,12 @@
 .navbar ul > li {
   margin-bottom: 70%;
   font-size: 1.2rem;
+  cursor: pointer;
+}
+.navbar__logout {
+  position: absolute;
+  bottom: 10%;
+  font-size: 1.5rem;
   cursor: pointer;
 }
 .navbar__li::before {
