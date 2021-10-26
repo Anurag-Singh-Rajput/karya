@@ -1,0 +1,47 @@
+.navbar {
+  position: absolute;
+  background-color: #13151b;
+  height: 100vh;
+  width: 20%;
+  padding-left: 2%;
+}
+
+.navbar h1 {
+  font-size: 1.2rem;
+  margin-top: 10%;
+}
+.navbar div::after {
+  content: "";
+  position: absolute;
+  margin-top: 0.5%;
+  width: 30%;
+  height: 3px;
+  background-color: #fabb18;
+}
+
+.navbar ul {
+  position: absolute;
+  top: 20%;
+  list-style: none;
+}
+.navbar ul > li {
+  margin-bottom: 70%;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+.navbar__li::before {
+  content: "";
+  position: absolute;
+  width: 150%;
+  transform: scaleX(0);
+  height: 2px;
+  left: 0;
+  background-color: #fabb18;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.navbar__li:hover::before {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
