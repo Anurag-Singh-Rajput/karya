@@ -1,11 +1,32 @@
 .card {
   background-color: #13151b;
-  width: 20%;
-  margin: 2%;
+  width: 33%;
+  height: 500px;
+  margin: 0% 2% 2% 2%;
   padding: 1%;
   text-align: center;
   box-shadow: 0px 0px 10px #0b0c0f;
+  border-radius: 3%;
 }
 .card h1 {
   font-size: 1.5rem;
+}
+.tasks {
+  height: 450px;
+  overflow-y: scroll;
+}
+.tasks::-webkit-scrollbar {
+  width: 5px;
+}
+
+.tasks::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.tasks::-webkit-scrollbar-thumb {
+  background: #5f5e65;
+}
+
+.tasks::-webkit-scrollbar-thumb:hover {
+  background: #5f5e65;
 }

@@ -1,0 +1,13 @@
+.task {
+  text-align: left;
+  background-color: #191c24;
+  padding: 8% 8% 12% 8%;
+  margin: 5% 3% 0% 3%;
+  border-radius: 3%;
+}
+.task p {
+  font-size: 0.9rem;
+}
+.task h1 {
+  font-size: 1.2rem;
+}

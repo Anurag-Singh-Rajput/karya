@@ -1,0 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap");
+.greeting {
+  margin: 2% 2% 2% 4%;
+}
+
+.greeting h1 {
+  font-size: 2.5rem;
+  font-family: "Montserrat", sans-serif;
+  font-weight: normal;
+}
+
+.greeting h3 {
+  font-size: 1.5rem;
+  font-family: "Montserrat", sans-serif;
+  font-weight: normal;
+  color: #5f5e65;
+}
