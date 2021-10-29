@@ -1,0 +1,6 @@
+.header {
+  display: block;
+}
+.header__greeting {
+  background-color: #fff;
+}

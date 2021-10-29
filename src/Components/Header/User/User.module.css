@@ -1,0 +1,32 @@
+.user {
+  position: absolute;
+  top: 0;
+  right: 5%;
+  width: 220px;
+  margin: 2% 2% 2% 4%;
+  display: flex;
+  align-items: center;
+}
+.user__dp > span {
+  display: block;
+  width: 100px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #fabb18;
+}
+.user__dp {
+  text-align: center;
+  align-items: center;
+  width: 60px;
+}
+.user__icon {
+  text-align: center;
+  align-items: center;
+  width: 60px;
+}
+.user__info {
+  text-align: center;
+  align-items: center;
+  width: 100px;
+}
