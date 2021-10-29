@@ -5,7 +5,7 @@ const User = () => {
     <div className={classes.user}>
       <div className={classes.user__icon}>🔔</div>
       <div className={classes.user__dp}>
-        <span></span>
+        <span>A</span>
       </div>
       <div className={classes.user__info}>Anurag Singh</div>
     </div>
