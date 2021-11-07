@@ -1,16 +1,17 @@
 import React from "react";
 import "./App.css";
-import Card from "./Components/Card/Card";
 import CardContainer from "./Components/Card/CardContainer";
 import Header from "./Components/Header/Header";
 import Navbar from "./Components/Navbar/Navbar";
+import NoteApp from "./Components/Notes/NoteApp";
 
 function App() {
   return (
     <React.Fragment>
       {/* <Navbar /> */}
-      <Header />
-      <CardContainer />
+      {/* <Header /> */}
+      {/* <CardContainer /> */}
+      <NoteApp />
     </React.Fragment>
   );
 }

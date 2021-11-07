@@ -1,0 +1,19 @@
+/* #FEB95A#F2C8EE#A9DED8#EE786C */
+.note {
+  width: 33%;
+  margin: 2%;
+  height: 200px;
+  padding: 1% 1% 1% 2%;
+}
+.note:nth-child(odd) {
+  background-color: #feb95a;
+}
+.note:nth-child(even) {
+  background-color: #a9ded8;
+}
+.note:nth-child(4n) {
+  background-color: #ee786c;
+}
+.note:nth-child(5n) {
+  background-color: #f2c8ee;
+}
