@@ -9,7 +9,7 @@ const CreateNote = (props) => {
   const handleClick = (e) => {
     e.preventDefault();
     props.setNotes((prevNotes) => {
-      return [...prevNotes, note];
+      return [note, ...prevNotes];
     });
   };
   const handleChange = (e) => {
