@@ -1,14 +1,9 @@
 import classes from "./Note.module.css";
-const Note = () => {
+const Note = (props) => {
   return (
     <div className={classes.note}>
-      <h1>Heading</h1>
-      <p>
-        Lorem dbfb dlrlorem epsum ipsum kopla skdnr Lorem dbfb dlrlorem epsum
-        ipsum kopla skdnr Lorem dbfb dlrlorem epsum ipsum kopla skdnr Lorem dbfb
-        dlrlorem epsum ipsum kopla skdnr Lorem dbfb dlrlorem epsum ipsum kopla
-        skdnr Lorem dbfb dlrlorem epsum ipsum kopla skdnr Lorem dbfb dlrlore
-      </p>
+      <h1>{props.title}</h1>
+      <p>{props.text}</p>
     </div>
   );
 };

@@ -8,9 +8,9 @@ import NoteApp from "./Components/Notes/NoteApp";
 function App() {
   return (
     <React.Fragment>
-      {/* <Navbar /> */}
-      {/* <Header /> */}
-      {/* <CardContainer /> */}
+      {/* <Navbar />
+      <Header />
+      <CardContainer /> */}
       <NoteApp />
     </React.Fragment>
   );

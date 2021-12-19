@@ -1,18 +1,11 @@
 import Note from "./Note";
 import classes from "./Notes.module.css";
-const Notes = () => {
+const Notes = (props) => {
   return (
     <div className={classes.notes}>
-      <Note />
-      <Note />
-      <Note />
-      <Note />
-      <Note />
-      <Note />
-      <Note />
-      <Note />
-      <Note />
-      <Note />
+      {props.notes.map((note) => (
+        <Note title={note.title} text={note.text} />
+      ))}
     </div>
   );
 };

@@ -1,8 +1,8 @@
 /* #FEB95A#F2C8EE#A9DED8#EE786C */
 .note {
-  width: 33%;
+  /* width: 20%%; */
+  /* max-width: 27%; */
   margin: 2%;
-  height: 200px;
   padding: 1% 1% 1% 2%;
 }
 .note:nth-child(odd) {
@@ -16,4 +16,16 @@
 }
 .note:nth-child(5n) {
   background-color: #f2c8ee;
+}
+.note:nth-child(odd) {
+  transform: rotate(2deg);
+}
+.note:nth-child(even) {
+  transform: rotate(-3deg);
+}
+.note:nth-child(3n) {
+  transform: rotate(1deg);
+}
+.note:nth-child(5n) {
+  transform: rotate(-4deg);
 }
