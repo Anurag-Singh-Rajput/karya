@@ -23,12 +23,13 @@ const CreateNote = (props) => {
   };
   return (
     <div className={classes.form__container}>
-      <form>
+      <form action="#">
         <input
           name="title"
           placeholder="Enter title for your note"
           value={note.title}
           onChange={handleChange}
+          required
         />
         <textarea
           name="text"
@@ -36,6 +37,7 @@ const CreateNote = (props) => {
           rows="3"
           value={note.content}
           onChange={handleChange}
+          required
         />
         <button type="submit" onClick={handleClick}>
           +

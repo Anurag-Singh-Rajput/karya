@@ -22,11 +22,15 @@ const NoteApp = () => {
     },
   ];
   const [notes, setNotes] = useState(initialNotes);
+  const onDelete = (id) => {
+    const newNote = notes.filter((note, index) => index !== id);
+    setNotes(newNote);
+  };
   return (
     <React.Fragment>
       <div className={classes.header}>Notes</div>
       <CreateNote setNotes={setNotes} />
-      <Notes notes={notes} />
+      <Notes notes={notes} onDelete={onDelete} />
     </React.Fragment>
   );
 };
