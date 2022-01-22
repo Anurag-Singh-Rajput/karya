@@ -1,4 +1,6 @@
 import classes from "./Note.module.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrashAlt } from "@fortawesome/free-solid-svg-icons";
 const Note = (props) => {
   const handleClick = () => {
     props.onDelete(props.id);
@@ -7,7 +9,11 @@ const Note = (props) => {
     <div className={classes.note}>
       <h1>{props.title}</h1>
       <p>{props.text}</p>
-      <button onClick={handleClick}>Delete</button>
+      <div className={classes.btn}>
+        <button onClick={handleClick}>
+          <FontAwesomeIcon icon={faTrashAlt} />
+        </button>
+      </div>
     </div>
   );
 };

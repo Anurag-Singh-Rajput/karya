@@ -12,6 +12,7 @@
 .card h1 {
   font-size: 1.2rem;
   font-family: "Source Sans Pro", sans-serif;
+  margin: 1% 0;
 }
 .tasks {
   height: 450px;
@@ -31,4 +32,19 @@
 
 .tasks::-webkit-scrollbar-thumb:hover {
   background: #5f5e65;
+}
+.btn {
+  color: #fabb18;
+  font-size: 2rem;
+  background-color: #191c24;
+  /* padding: 0.5% 0%; */
+  border-radius: 500px;
+  border: none;
+  width: 100%;
+  cursor: pointer;
+  margin: 2% 0;
+}
+.no__cards {
+  margin: 4% 0;
+  color: #5f5e65;
 }

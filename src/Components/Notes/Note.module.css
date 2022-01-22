@@ -1,7 +1,6 @@
 /* #FEB95A#F2C8EE#A9DED8#EE786C */
 .note {
-  /* width: 20%%; */
-  /* max-width: 27%; */
+  max-width: 27%;
   margin: 2%;
   padding: 1% 1% 1% 2%;
 }
@@ -28,4 +27,22 @@
 }
 .note:nth-child(5n) {
   transform: rotate(-4deg);
+}
+.note button {
+  color: #fabb18;
+  font-size: 1rem;
+  background-color: #191c24;
+  border-radius: 50%;
+  border: none;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  margin: 5% 0 1% 0;
+  padding: 2%;
+}
+button:hover {
+  background-color: black;
+}
+.btn {
+  text-align: center;
 }
