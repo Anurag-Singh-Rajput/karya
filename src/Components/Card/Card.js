@@ -13,8 +13,14 @@ const Card = (props) => {
         {props.tasks.length === 0 ? (
           <p className={classes.no__cards}>Nothing to show!</p>
         ) : (
-          props.tasks.map((task) => (
-            <Task title={task.title} content={task.content} />
+          props.tasks.map((task, i) => (
+            <Task
+              title={task.title}
+              content={task.content}
+              type={props.type}
+              index={i}
+              clickHandler={props.handleClick}
+            />
           ))
         )}
       </div>

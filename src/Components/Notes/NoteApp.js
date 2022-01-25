@@ -27,11 +27,11 @@ const NoteApp = () => {
     setNotes(newNote);
   };
   return (
-    <React.Fragment>
+    <>
       <div className={classes.header}>Notes</div>
       <CreateNote setNotes={setNotes} />
       <Notes notes={notes} onDelete={onDelete} />
-    </React.Fragment>
+    </>
   );
 };
 
