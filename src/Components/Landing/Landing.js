@@ -1,22 +1,20 @@
 import classes from "./Landing.module.css";
 import { firebase } from "../../Firebase/firebase";
-import {
-  getAuth,
-  getRedirectResult,
-  GoogleAuthProvider,
-  signInWithRedirect,
-} from "firebase/auth";
-const Landing = () => {
+import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import { useState } from "react/cjs/react.development";
+const Landing = (props) => {
   const signInWithGoogle = () => {
     console.log("here");
     const auth = getAuth();
     const provider = new GoogleAuthProvider();
-    signInWithRedirect(auth, provider);
-    getRedirectResult(auth)
+    signInWithPopup(auth, provider)
       .then((result) => {
         const credential = GoogleAuthProvider.credentialFromResult(result);
         const token = credential.accessToken;
         const user = result.user;
+        props.setName(user.displayName);
+        props.setIsLoggedIn(true);
+        props.setUid(user.uid);
         console.log(user);
       })
       .catch((error) => {
@@ -28,10 +26,8 @@ const Landing = () => {
   };
   return (
     <>
-      <div>
-        <h1>Hello World</h1>
-        <button onClick={signInWithGoogle}>Sign In</button>
-      </div>
+      <h1>Hello World</h1>
+      <button onClick={signInWithGoogle}>Sign In</button>
     </>
   );
 };

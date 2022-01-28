@@ -18,6 +18,7 @@
   right: 50px;
   color: #fabb18;
   font-size: 1.5rem;
+  cursor: pointer;
 }
 .navbar .navbar__title::after {
   content: "";
