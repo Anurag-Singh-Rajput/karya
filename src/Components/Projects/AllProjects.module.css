@@ -1,0 +1,5 @@
+.projects {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0.5% 2% 2% 2%;
+}

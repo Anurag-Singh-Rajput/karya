@@ -16,9 +16,16 @@
   position: absolute;
   margin: 0 auto;
   right: 50px;
+  top: 25px;
   color: #fabb18;
   font-size: 1.5rem;
   cursor: pointer;
+  padding: 3%;
+}
+.navbar__title_icon:hover {
+  background-color: #191c24;
+  cursor: pointer;
+  border-radius: 50%;
 }
 .navbar .navbar__title::after {
   content: "";
