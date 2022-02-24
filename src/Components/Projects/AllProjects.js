@@ -4,7 +4,6 @@ import Header from "../Header/Header";
 const AllProjects = () => {
   return (
     <>
-      <Header name={"Anurag Singh"} />
       <div className={classes.projects}>
         <Project />
         <Project />

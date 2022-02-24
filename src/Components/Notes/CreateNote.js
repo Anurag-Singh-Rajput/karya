@@ -1,6 +1,13 @@
 import { useState } from "react";
 import classes from "./CreateNote.module.css";
-
+import { firebase } from "../../Firebase/firebase";
+import {
+  doc,
+  setDoc,
+  getFirestore,
+  addDoc,
+  collection,
+} from "firebase/firestore";
 const CreateNote = (props) => {
   const [note, setNote] = useState({
     title: "",
@@ -8,6 +15,20 @@ const CreateNote = (props) => {
   });
   const handleClick = (e) => {
     e.preventDefault();
+    const db = getFirestore();
+    try {
+      const docRef = addDoc(
+        collection(db, "db/", props.uid, "/notes"),
+        {
+          title: note.title,
+          content: note.text,
+        },
+        { merge: true }
+      );
+      console.log(docRef);
+    } catch (err) {
+      console.log(err);
+    }
     props.setNotes((prevNotes) => {
       return [note, ...prevNotes];
     });

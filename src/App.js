@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import classes from "./App.module.css";
 import CardContainer from "./Components/Card/CardContainer";
 import Header from "./Components/Header/Header";
@@ -11,13 +11,24 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import AllProjects from "./Components/Projects/AllProjects.js";
 function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState(true);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [uid, setUid] = useState("");
   const [name, setName] = useState("");
   const [open, setOpen] = useState(false);
+  const [user, setUser] = useState("");
+  const [isLoaded, setLoaded] = useState(false);
+  useEffect(() => {
+    const loggedInUser = localStorage.getItem("isUserLoggedIn");
+    if (loggedInUser === "loggedIn") {
+      setIsLoggedIn(true);
+      setName(localStorage.getItem("name"));
+      setUid(localStorage.getItem("uid"));
+      setLoaded(true);
+    }
+  }, [open, uid]);
   return (
     <>
-      {/* {!isLoggedIn ? (
+      {/* {!isLoggedIn && !user ? (
         <Landing
           setIsLoggedIn={setIsLoggedIn}
           setName={setName}
@@ -30,11 +41,38 @@ function App() {
       ) : (
         <Navbar setOpen={setOpen} />
       )} */}
-      {/* <Dashboard name={name} uid={uid} /> */}
+      {/* {!open ? (
+        <div className={classes.hamburger} onClick={() => setOpen(!open)}>
+          <FontAwesomeIcon icon={faBars} />
+        </div>
+      ) : (
+        <Navbar setOpen={setOpen} />
+      )} */}
+      {/* {!isLoggedIn ? (
+        <Landing
+          setIsLoggedIn={setIsLoggedIn}
+          setName={setName}
+          setUid={setUid}
+          setUser={setUser}
+        />
+      ) : (
+        <Dashboard name={name} />
+      )} */}
+      {/* {!isLoggedIn ? (
+        <Landing
+          setIsLoggedIn={setIsLoggedIn}
+          setName={setName}
+          setUid={setUid}
+          setUser={setUser}
+        />
+      ) : (
+        <NoteApp uid={uid} />
+      )} */}
       {/* <Landing /> */}
       {/* <Navbar /> */}
-      {/* <NoteApp /> */}
-      <AllProjects />
+      {isLoaded ? <NoteApp uid={uid} /> : "Hello"}
+      {/* <Dashboard name="Anurag Singh" /> */}
+      {/* <AllProjects /> */}
     </>
   );
 }
