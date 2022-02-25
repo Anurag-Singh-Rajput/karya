@@ -1,15 +1,11 @@
 import classes from "../Projects/Project.module.css";
 
-const Project = () => {
+const Project = (props) => {
   return (
     <>
       <div className={classes.project__container}>
-        <h1>Project Name</h1>
-        <p>
-          Project description should come here Project description should come
-          here Project description should come here Project description should
-          come here
-        </p>
+        <h1>{props.title}</h1>
+        <p>{props.content}</p>
       </div>
     </>
   );

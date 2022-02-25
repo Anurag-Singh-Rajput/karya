@@ -30,14 +30,14 @@ function App() {
   }, [open, uid]);
   return (
     <>
-      {/* {!open ? (
+      {!open ? (
         <Navbar setOpen={setOpen} setProject={setProject} setNote={setNote} />
       ) : (
         <div className={classes.hamburger} onClick={() => setOpen(!open)}>
           <FontAwesomeIcon icon={faBars} />
         </div>
-      )} */}
-      {project ? <AllProjects name={name} /> : null}
+      )}
+      {project ? <AllProjects name={name} uid={uid} /> : null}
       {note ? <NoteApp uid={uid} /> : null}
       {/* <Dashboard name="Anurag Singh" /> */}
     </>
