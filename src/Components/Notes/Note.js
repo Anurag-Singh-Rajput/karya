@@ -3,7 +3,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrashAlt } from "@fortawesome/free-solid-svg-icons";
 const Note = (props) => {
   const handleClick = () => {
-    props.onDelete(props.id);
+    console.log(props.noteId);
+    props.onDelete(props.noteId);
   };
   return (
     <div className={classes.note}>

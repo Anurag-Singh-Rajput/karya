@@ -8,7 +8,7 @@ const Notes = (props) => {
         <Note
           onDelete={props.onDelete}
           key={index}
-          id={index}
+          noteId={note.noteId}
           title={note.title}
           text={note.text}
         />

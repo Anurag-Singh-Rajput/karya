@@ -5,7 +5,13 @@ const Card = (props) => {
     <div className={classes.card}>
       <h1>{props.title}</h1>
       {props.add ? (
-        <button type="submit" className={classes.btn}>
+        <button
+          type="submit"
+          className={classes.btn}
+          onClick={() => {
+            props.setModal(true);
+          }}
+        >
           +
         </button>
       ) : null}

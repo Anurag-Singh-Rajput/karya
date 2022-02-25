@@ -8,6 +8,16 @@ const Navbar = (props) => {
     localStorage.clear("isUserLoggedIn");
     localStorage.clear("uid");
   };
+  const handleNotes = () => {
+    props.setProject(false);
+    props.setNote(true);
+    props.setOpen(true);
+  };
+  const handleProjects = () => {
+    props.setNote(false);
+    props.setProject(true);
+    props.setOpen(true);
+  };
   return (
     <div className={classes.navbar}>
       <div className={classes.navbar__title}>
@@ -15,12 +25,19 @@ const Navbar = (props) => {
         <FontAwesomeIcon
           icon={faArrowLeft}
           className={classes.navbar__title_icon}
-          onClick={() => props.setOpen(false)}
+          onClick={() => {
+            props.setOpen(true);
+            console.log("clicked");
+          }}
         />
       </div>
       <ul>
-        <li className={classes.navbar__li}>Projects</li>
-        <li className={classes.navbar__li}>Notes</li>
+        <li className={classes.navbar__li} onClick={handleProjects}>
+          Projects
+        </li>
+        <li className={classes.navbar__li} onClick={handleNotes}>
+          Notes
+        </li>
       </ul>
       <div className={classes.navbar__logout} onClick={logoutHandler}>
         Logout

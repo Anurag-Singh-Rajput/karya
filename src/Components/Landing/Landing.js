@@ -12,15 +12,15 @@ const Landing = (props) => {
         const credential = GoogleAuthProvider.credentialFromResult(result);
         const token = credential.accessToken;
         const user = result.user;
-        props.setUser(user);
-        props.setName(user.displayName);
-        props.setIsLoggedIn(true);
-        props.setUid(user.uid);
         localStorage.setItem("isUserLoggedIn", "loggedIn");
         localStorage.setItem("user", user);
         localStorage.setItem("isLoggedIn", true);
         localStorage.setItem("name", user.displayName);
         localStorage.setItem("uid", user.uid);
+        props.setUser(user);
+        props.setName(user.displayName);
+        props.setIsLoggedIn(true);
+        props.setUid(user.uid);
         console.log("landing");
       })
       .catch((error) => {

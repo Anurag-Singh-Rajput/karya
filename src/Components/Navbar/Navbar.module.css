@@ -4,6 +4,7 @@
   height: 100vh;
   width: 20%;
   padding-left: 2%;
+  z-index: 10000;
 }
 .navbar__title {
 }

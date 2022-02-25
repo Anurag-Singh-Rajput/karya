@@ -3,3 +3,18 @@
   flex-wrap: wrap;
   padding: 0.5% 2% 2% 2%;
 }
+/* #FEB95A#F2C8EE#A9DED8#EE786C */
+.btn__class {
+  display: block;
+  text-align: center;
+}
+.button {
+  color: #fabb18;
+  font-size: 2rem;
+  background-color: #191c24;
+  /* padding: 0.5% 0%; */
+  border-radius: 500px;
+  border: none;
+  width: 70%;
+  cursor: pointer;
+}

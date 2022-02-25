@@ -17,6 +17,8 @@ function App() {
   const [open, setOpen] = useState(false);
   const [user, setUser] = useState("");
   const [isLoaded, setLoaded] = useState(false);
+  const [project, setProject] = useState(true);
+  const [note, setNote] = useState(false);
   useEffect(() => {
     const loggedInUser = localStorage.getItem("isUserLoggedIn");
     if (loggedInUser === "loggedIn") {
@@ -28,53 +30,64 @@ function App() {
   }, [open, uid]);
   return (
     <>
-      {/* {!isLoggedIn && !user ? (
-        <Landing
-          setIsLoggedIn={setIsLoggedIn}
-          setName={setName}
-          setUid={setUid}
-        />
-      ) : !open ? (
-        <div className={classes.hamburger} onClick={() => setOpen(!open)}>
-          <FontAwesomeIcon icon={faBars} />
-        </div>
-      ) : (
-        <Navbar setOpen={setOpen} />
-      )} */}
       {/* {!open ? (
+        <Navbar setOpen={setOpen} setProject={setProject} setNote={setNote} />
+      ) : (
         <div className={classes.hamburger} onClick={() => setOpen(!open)}>
           <FontAwesomeIcon icon={faBars} />
         </div>
-      ) : (
-        <Navbar setOpen={setOpen} />
       )} */}
-      {/* {!isLoggedIn ? (
-        <Landing
-          setIsLoggedIn={setIsLoggedIn}
-          setName={setName}
-          setUid={setUid}
-          setUser={setUser}
-        />
-      ) : (
-        <Dashboard name={name} />
-      )} */}
-      {/* {!isLoggedIn ? (
-        <Landing
-          setIsLoggedIn={setIsLoggedIn}
-          setName={setName}
-          setUid={setUid}
-          setUser={setUser}
-        />
-      ) : (
-        <NoteApp uid={uid} />
-      )} */}
-      {/* <Landing /> */}
-      {/* <Navbar /> */}
-      {isLoaded ? <NoteApp uid={uid} /> : "Hello"}
+      {project ? <AllProjects name={name} /> : null}
+      {note ? <NoteApp uid={uid} /> : null}
       {/* <Dashboard name="Anurag Singh" /> */}
-      {/* <AllProjects /> */}
     </>
   );
 }
 
 export default App;
+
+// {!isLoggedIn && !user ? (
+//   <Landing
+//     setIsLoggedIn={setIsLoggedIn}
+//     setName={setName}
+//     setUid={setUid}
+//   />
+// ) : !open ? (
+//   <div className={classes.hamburger} onClick={() => setOpen(!open)}>
+//     <FontAwesomeIcon icon={faBars} />
+//   </div>
+// ) : (
+//   <Navbar setOpen={setOpen} />
+// )}
+// {!open ? (
+//   <div className={classes.hamburger} onClick={() => setOpen(!open)}>
+//     <FontAwesomeIcon icon={faBars} />
+//   </div>
+// ) : (
+//   <Navbar setOpen={setOpen} />
+// )}
+// {!isLoggedIn ? (
+//   <Landing
+//     setIsLoggedIn={setIsLoggedIn}
+//     setName={setName}
+//     setUid={setUid}
+//     setUser={setUser}
+//   />
+// ) : (
+//   <Dashboard name={name} />
+// )}
+// {!isLoggedIn ? (
+//   <Landing
+//     setIsLoggedIn={setIsLoggedIn}
+//     setName={setName}
+//     setUid={setUid}
+//     setUser={setUser}
+//   />
+// ) : (
+//   <NoteApp uid={uid} />
+// )}
+// <Landing />
+// <Navbar />
+// {isLoaded ? <NoteApp uid={uid} /> : "Hello"}
+// <Dashboard name="Anurag Singh" />
+// <AllProjects />
