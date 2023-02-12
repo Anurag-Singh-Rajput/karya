@@ -1,16 +1,23 @@
 .hamburger {
   color: #fabb18;
-  margin: 1% 0 0 0.5%;
+  margin: 0.5% 0 0 0.5%;
   font-size: 1.2rem;
   position: absolute;
   text-align: center;
+  display: grid;
+  align-items: center;
   padding: 1%;
   width: 20px;
   height: 20px;
+  top: 1%;
 }
 
 .hamburger:hover {
   background-color: #191c24;
   cursor: pointer;
   border-radius: 50%;
+}
+
+.icon {
+  align-items: center;
 }

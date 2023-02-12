@@ -4,6 +4,14 @@ import CardContainer from "../Card/CardContainer";
 import Header from "../Header/Header";
 import AllProjects from "../Projects/AllProjects";
 import Input from "./Input";
+import {
+  doc,
+  collection,
+  query,
+  getDocs,
+  getFirestore,
+  deleteDoc,
+} from "firebase/firestore";
 
 const plan = [
   {
@@ -35,6 +43,35 @@ const Dashboard = (props) => {
   const [pendingTasks, setPendingTasks] = useState(plan);
   const [ongoingTasks, setOngoingTasks] = useState(ongoing);
   const [completedTasks, setCompletedTasks] = useState(completed);
+  const setVariables = () => {
+    const db = getFirestore();
+    let newUid = "";
+    if (props.uid === "") {
+      newUid = localStorage.getItem("uid");
+    } else newUid = props.uid;
+    const q = query(
+      collection(db, "db/" + newUid + "/projects/" + props.todoid)
+    );
+    const querySnapshot = getDocs(q);
+    let oTask = [];
+    let pTask = [];
+    let cTask = [];
+    Promise.resolve(querySnapshot).then((data) =>
+      data.docs.map((ele) => {
+        console.log(ele._document);
+        ele._document.data.value.mapValue.fields.tasks.mapValue.fields.pendingTasks.arrayValue.values.map(
+          (ele) => pTask.push(ele.mapValue.fields)
+        );
+        ele._document.data.value.mapValue.fields.tasks.mapValue.fields.ongoingTasks.arrayValue.values.map(
+          (ele) => oTask.push(ele.mapValue.fields)
+        );
+        ele._document.data.value.mapValue.fields.tasks.mapValue.fields.completedTasks.arrayValue.values.map(
+          (ele) => cTask.push(ele.mapValue.fields)
+        );
+      })
+    );
+    console.log(pTask, oTask, cTask);
+  };
   return (
     <>
       <Header name={props.name} />

@@ -33,8 +33,24 @@ const Landing = (props) => {
 
   return (
     <>
-      <h1>Hello World</h1>
-      <button onClick={signInWithGoogle}>Sign In</button>
+      <div className={classes.main}>
+        <div className={classes.main__container}>
+          <h1>karya</h1>
+          <p>
+            Simple, flexible, and powerful. All it takes are boards, lists, and
+            cards to get a clear view of who’s doing what and what needs to get
+            doneSimple, flexible, and powerful. No need to start from scratch.
+            Jump-start your workflow with a proven playbook designed for
+            different teams. Customize it to make it yours.
+          </p>
+          <button className={classes.btn1} onClick={signInWithGoogle}>
+            Sign In
+          </button>
+          <button className={classes.btn2} onClick={signInWithGoogle}>
+            Sign Up
+          </button>
+        </div>
+      </div>
     </>
   );
 };

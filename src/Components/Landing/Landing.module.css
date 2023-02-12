@@ -1,0 +1,58 @@
+.main {
+  text-align: center;
+  margin: auto;
+  height: 100vh;
+  display: grid;
+  align-items: center;
+  background: url("https://firebasestorage.googleapis.com/v0/b/karya-55d30.appspot.com/o/111.jpg?alt=media&token=ddf8ffa8-ca2b-4c7c-8c8a-362d2ed65af3");
+  background-size: cover;
+}
+.main__container {
+  width: 80%;
+  margin: auto;
+}
+
+p {
+  margin: 2%;
+}
+
+.main__container h1 {
+  color: #fabb18;
+  font-size: 8rem;
+}
+
+.btn1 {
+  color: #fabb18;
+  font-size: 1rem;
+  background-color: #171821;
+  padding: 0.5% 0%;
+  border-radius: 100px;
+  border: 2px solid #0c0d12;
+  box-shadow: 0 0 20px #251b00;
+  width: 150px;
+  cursor: pointer;
+  margin: 1%;
+  transition: 0.4s;
+}
+
+.btn1:hover {
+  background-color: #fabb18;
+  border: 2px solid #fabb18;
+  box-shadow: 0 0 20px #b98a12;
+  color: #171821;
+}
+
+.btn2 {
+  color: #fabb18;
+  font-size: 1rem;
+  background-color: #0c0d12;
+  padding: 0.5% 0%;
+  border-radius: 100px;
+  border: none;
+  width: 150px;
+  cursor: pointer;
+  margin: 1%;
+}
+.btn2:hover {
+  background-color: #0c0d12;
+}

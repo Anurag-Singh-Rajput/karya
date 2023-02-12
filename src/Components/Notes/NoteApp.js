@@ -24,37 +24,60 @@ const NoteApp = (props) => {
       noteId: "1",
     },
     {
-      title: "This is title 2",
+      title: "This is title 3",
       text: "Lorem dbfb dlrlorem epsum ipsum kopla skdnr Lorem dbfb dlrlorem epsum ipsum kopla skdnr Lorem dbfb dlrlorem epsum ipsum kopla skdnr Lorem dbfb dlrlorem epsum ipsum kopla skdnr Lorem dbfb dlrlorem epsum ipsum kopla skdnr Lorem dbfb dlrlorem epsum ipsum kopla skdnr Lorem dbfb dlrlore",
       noteId: "2",
     },
     {
-      title: "This is title 2",
+      title: "This is title 4",
+      text: "Lorem dbfb dlrlorem epsum ipsum kopla skdnr Lorem dbfb dlrlorem epsum ipsum kopla skdnr Lorem dbfb dlrlorem epsum ipsum kopla skdnr Lorem dbfb dlrlorem epsum ipsum kopla skdnr Lorem dbfb dlrlorem epsum ipsum kopla skdnr Lorem dbfb dlrlorem epsum ipsum kopla skdnr Lorem dbfb dlrlore",
+      noteId: "3",
+    },
+    {
+      title: "This is title 5",
+      text: "Lorem dbfb dlrlorem epsum ipsum kopla skdnr Lorem dbfb dlrlorem epsum ipsum kopla skdnr Lorem dbfb dlrlorem epsum ipsum kopla skdnr Lorem dbfb dlrlorem epsum ipsum kopla skdnr Lorem dbfb dlrlorem epsum ipsum kopla skdnr Lorem dbfb dlrlorem epsum ipsum kopla skdnr Lorem dbfb dlrlore",
+      noteId: "3",
+    },
+    {
+      title: "This is title 6",
+      text: "Lorem dbfb dlrlorem epsum ipsum kopla skdnr Lorem dbfb dlrlorem epsum ipsum kopla skdnr Lorem dbfb dlrlorem epsum ipsum kopla skdnr Lorem dbfb dlrlorem epsum ipsum kopla skdnr Lorem dbfb dlrlorem epsum ipsum kopla skdnr Lorem dbfb dlrlorem epsum ipsum kopla skdnr Lorem dbfb dlrlore",
+      noteId: "3",
+    },
+    {
+      title: "This is title 7",
       text: "Lorem dbfb dlrlorem epsum ipsum kopla skdnr Lorem dbfb dlrlorem epsum ipsum kopla skdnr Lorem dbfb dlrlorem epsum ipsum kopla skdnr Lorem dbfb dlrlorem epsum ipsum kopla skdnr Lorem dbfb dlrlorem epsum ipsum kopla skdnr Lorem dbfb dlrlorem epsum ipsum kopla skdnr Lorem dbfb dlrlore",
       noteId: "3",
     },
   ]);
-  const setVariables = () => {
-    const db = getFirestore();
-    const q = query(collection(db, "db/" + props.uid + "/notes"));
-    const querySnapshot = getDocs(q);
-    const newNotes = [];
-    Promise.resolve(querySnapshot).then((data) =>
-      data.docs.map((ele) => {
-        initialNotes.push({
-          title: ele._document.data.value.mapValue.fields.title.stringValue,
-          text: ele._document.data.value.mapValue.fields.content.stringValue,
-          noteId: ele._document.key.path.segments[8],
-        });
-      })
-    );
+
+  useEffect(() => {
+    var newNotes = [];
+    const fetchData = async () => {
+      try {
+        const db = getFirestore();
+        const q = query(collection(db, "db/" + props.uid + "/notes"));
+        const querySnapshot = await getDocs(q);
+        await Promise.resolve(querySnapshot).then((data) =>
+          data.docs.map((ele) => {
+            newNotes.push({
+              title: ele._document.data.value.mapValue.fields.title.stringValue,
+              text: ele._document.data.value.mapValue.fields.content
+                .stringValue,
+              noteId: ele._document.key.path.segments[8],
+            });
+          })
+        );
+        setNotes([...newNotes, ...initialNotes]);
+        setIsLoading(false);
+      } catch (e) {
+        console.log(e);
+      }
+    };
+    fetchData();
+    // var finalNotes = [...initialNotes, ...newNotes];
+    // console.log(finalNotes);
     // console.log(newNotes);
-    // const newNote = [...initialNotes, ...newNotes];
-    // console.log(newNote);
-    // setNotes(newNote);
-    // console.log(initialNotes);
-    setIsLoading(false);
-  };
+  }, [props.uid]);
 
   // console.log(initialNotes);
   // const querySnapshot = getDocs(collection(db, "db/" + props.uid + "/notes"));
@@ -77,7 +100,7 @@ const NoteApp = (props) => {
       <Notes notes={initialNotes} onDelete={onDelete} />
     </>
   ) : (
-    setVariables()
+    <h1>Loading ...</h1>
   );
 };
 

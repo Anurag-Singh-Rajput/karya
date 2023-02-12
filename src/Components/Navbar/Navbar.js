@@ -11,12 +11,12 @@ const Navbar = (props) => {
   const handleNotes = () => {
     props.setProject(false);
     props.setNote(true);
-    props.setOpen(true);
+    props.setOpen(false);
   };
   const handleProjects = () => {
     props.setNote(false);
     props.setProject(true);
-    props.setOpen(true);
+    props.setOpen(false);
   };
   return (
     <div className={classes.navbar}>
@@ -26,7 +26,7 @@ const Navbar = (props) => {
           icon={faArrowLeft}
           className={classes.navbar__title_icon}
           onClick={() => {
-            props.setOpen(true);
+            props.setOpen(false);
             console.log("clicked");
           }}
         />
